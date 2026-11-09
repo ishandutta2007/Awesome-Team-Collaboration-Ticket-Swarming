@@ -7,7 +7,7 @@
 <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/ishandutta2007/Awesome-Awesome-Awesome)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](file:///C:/Users/hp/Documents/Projects/Awesome-Team-Collaboration-Ticket-Swarming/LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/ishandutta2007/Awesome-Team-Collaboration-Ticket-Swarming?style=social)](https://github.com/ishandutta2007/Awesome-Team-Collaboration-Ticket-Swarming/stargazers)
+[![GitHub_Stars](https://img.shields.io/github/stars/ishandutta2007/Awesome-Team-Collaboration-Ticket-Swarming?style=social)](https://github.com/ishandutta2007/Awesome-Team-Collaboration-Ticket-Swarming/stargazers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](file:///C:/Users/hp/Documents/Projects/Awesome-Team-Collaboration-Ticket-Swarming#contributing)
 <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
 
@@ -45,7 +45,7 @@ The global team collaboration software market is estimated at **$31.8 billion in
 
 - [📈 Sector Overview &amp; Market Dynamics](#sector-overview--market-dynamics)
 - [🟦 SaaS / Hosted Platforms](#saas--hosted-platforms)
-- [🟩 Open-Source Software (Ranked by GitHub Stars)](#open-source-software)
+- [🟩 Open-Source Software (Ranked by GitHub_Stars)](#open-source-software)
 - [📊 Feature Comparison Matrix](#comparison-at-a-glance)
 - [⭐ Star History](#star-history)
 - [☕ Support](#support)
@@ -75,7 +75,7 @@ Below is an overview of major commercial, cloud-hosted platforms supporting coll
 
 ## 🟩 Open-Source Software 🔓
 
-Self-hosted, community-driven Team Collaboration, Incident Management, and Ticket Swarming projects. Sorted in descending order by **GitHub Star Count**.
+Self-hosted, community-driven Team Collaboration, Incident Management, and Ticket Swarming projects. Sorted in descending order by **GitHub Stars_Count**.
 
 ### 1. Plane ✈️
 [![Plane Stars](https://img.shields.io/github/stars/makeplane/plane?style=social&color=white)](https://github.com/makeplane/plane/stargazers)
