@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360">
+  <defs>
+    <!-- Background linear gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <!-- Card linear gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Title vibrant gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="35%" stop-color="#38bdf8" />
+      <stop offset="70%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Swarm particle gradient -->
+    <radialGradient id="particleGlow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="particleGlow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="particleGlow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Filter for soft glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 38px;
+      letter-spacing: -0.5px;
+      fill: url(#titleGrad);
+    }
+    .sub-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 0.2px;
+      fill: #94a3b8;
+    }
+    .badge-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      fill: #e2e8f0;
+    }
+    .card-label {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      fill: #f8fafc;
+    }
+    .card-sub {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      fill: #94a3b8;
+    }
+
+    /* Ambient animated swarm paths */
+    @keyframes dashFlow {
+      0% { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(1.08); }
+    }
+    @keyframes floatParticle {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(15px, -12px); }
+      100% { transform: translate(0, 0); }
+    }
+    @keyframes pulseOrb {
+      0%, 100% { transform: scale(0.95); opacity: 0.4; }
+      50% { transform: scale(1.15); opacity: 0.8; }
+    }
+
+    .flow-line {
+      stroke-dasharray: 8, 8;
+      animation: dashFlow 25s linear infinite;
+    }
+    .flow-line-reverse {
+      stroke-dasharray: 6, 6;
+      animation: dashFlow 18s linear infinite reverse;
+    }
+    .swarm-orb-1 {
+      animation: pulseGlow 6s ease-in-out infinite;
+      transform-origin: 200px 100px;
+    }
+    .swarm-orb-2 {
+      animation: pulseGlow 7s ease-in-out infinite 1.5s;
+      transform-origin: 1000px 260px;
+    }
+    .floating-dot {
+      animation: floatParticle 8s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="360" fill="url(#bgGrad)" rx="16" />
+
+  <!-- Background Grid Pattern -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="150" y1="0" x2="150" y2="360" />
+    <line x1="300" y1="0" x2="300" y2="360" />
+    <line x1="450" y1="0" x2="450" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="750" y1="0" x2="750" y2="360" />
+    <line x1="900" y1="0" x2="900" y2="360" />
+    <line x1="1050" y1="0" x2="1050" y2="360" />
+  </g>
+
+  <!-- Animated Background Glow Orbs -->
+  <circle class="swarm-orb-1" cx="200" cy="100" r="140" fill="url(#particleGlow1)" />
+  <circle class="swarm-orb-2" cx="1020" cy="240" r="150" fill="url(#particleGlow2)" />
+  <circle class="swarm-orb-1" cx="620" cy="320" r="100" fill="url(#particleGlow3)" />
+
+  <!-- Dynamic Swarm Workflow Flow Lines (in background layer) -->
+  <g opacity="0.35">
+    <path class="flow-line" d="M 120 70 Q 300 130 600 80 T 1080 120" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <path class="flow-line-reverse" d="M 100 290 Q 400 220 750 280 T 1100 240" fill="none" stroke="#a855f7" stroke-width="2" />
+    <path class="flow-line" d="M 220 340 C 450 180 800 340 1050 90" fill="none" stroke="#34d399" stroke-width="1.5" />
+  </g>
+
+  <!-- Ambient Dynamic Floating Particles -->
+  <g class="floating-dot" opacity="0.6">
+    <circle cx="160" cy="140" r="4" fill="#38bdf8" />
+    <circle cx="320" cy="50" r="3" fill="#a855f7" />
+    <circle cx="980" cy="80" r="4" fill="#34d399" />
+    <circle cx="1060" cy="180" r="3" fill="#60a5fa" />
+    <circle cx="850" cy="310" r="4" fill="#f472b6" />
+    <circle cx="260" cy="280" r="3" fill="#38bdf8" />
+  </g>
+
+  <!-- Foreground Content Container (Ensures 100% Foreground Visibility) -->
+  <!-- Header Pill Badge -->
+  <g transform="translate(420, 36)">
+    <rect width="360" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5" />
+    <circle cx="20" cy="16" r="5" fill="#34d399">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="36" y="21" class="badge-text" fill="#93c5fd">TICKET SWARMING &amp; INTELLIGENT COLLABORATION</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="600" y="118" text-anchor="middle" class="title-text">
+    Awesome Team Collaboration &amp; Ticket Swarming
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="152" text-anchor="middle" class="sub-text">
+    Curated Hub of SaaS &amp; Open-Source Platforms for Cross-Functional Incident Resolution &amp; Human-AI Swarms
+  </text>
+
+  <!-- Interactive / Modern Architecture Feature Cards (Foreground) -->
+  <g transform="translate(100, 195)">
+    <!-- Card 1: Dynamic Incident Swarming -->
+    <g transform="translate(0, 0)">
+      <rect width="220" height="95" rx="12" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.6" />
+      <circle cx="35" cy="36" r="16" fill="#0369a1" fill-opacity="0.5" />
+      <text x="35" y="42" text-anchor="middle" font-size="16" fill="#38bdf8">⚡</text>
+      <text x="65" y="34" class="card-label">Dynamic Swarms</text>
+      <text x="65" y="52" class="card-sub">Zero-Tier Resolution</text>
+      <text x="20" y="78" class="card-sub" fill="#64748b">Cross-functional subject routing</text>
+    </g>
+
+    <!-- Card 2: Human-AI Agent Swarms -->
+    <g transform="translate(260, 0)">
+      <rect width="220" height="95" rx="12" fill="url(#cardGrad)" stroke="#a855f7" stroke-width="1.2" stroke-opacity="0.6" />
+      <circle cx="35" cy="36" r="16" fill="#6b21a8" fill-opacity="0.5" />
+      <text x="35" y="42" text-anchor="middle" font-size="16" fill="#c084fc">🤖</text>
+      <text x="65" y="34" class="card-label">Human-AI Swarms</text>
+      <text x="65" y="52" class="card-sub">MCP &amp; Agent Parity</text>
+      <text x="20" y="78" class="card-sub" fill="#64748b">Autonomous investigation &amp; fixes</text>
+    </g>
+
+    <!-- Card 3: Skills-Based Expert Routing -->
+    <g transform="translate(520, 0)">
+      <rect width="220" height="95" rx="12" fill="url(#cardGrad)" stroke="#34d399" stroke-width="1.2" stroke-opacity="0.6" />
+      <circle cx="35" cy="36" r="16" fill="#065f46" fill-opacity="0.5" />
+      <text x="35" y="42" text-anchor="middle" font-size="16" fill="#34d399">🎯</text>
+      <text x="65" y="34" class="card-label">Skills Routing</text>
+      <text x="65" y="52" class="card-sub">Minimum Expert Match</text>
+      <text x="20" y="78" class="card-sub" fill="#64748b">Adaptive card invitations &amp; context</text>
+    </g>
+
+    <!-- Card 4: Open-Source Self-Hosted -->
+    <g transform="translate(780, 0)">
+      <rect width="220" height="95" rx="12" fill="url(#cardGrad)" stroke="#f59e0b" stroke-width="1.2" stroke-opacity="0.6" />
+      <circle cx="35" cy="36" r="16" fill="#92400e" fill-opacity="0.5" />
+      <text x="35" y="42" text-anchor="middle" font-size="16" fill="#fbbf24">🔓</text>
+      <text x="65" y="34" class="card-label">Self-Hosted OSS</text>
+      <text x="65" y="52" class="card-sub">Privacy &amp; Full Control</text>
+      <text x="20" y="78" class="card-sub" fill="#64748b">From 60k+ star titans to agile relays</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent / Status Bar -->
+  <g transform="translate(0, 355)">
+    <rect width="1200" height="5" fill="url(#titleGrad)" />
+  </g>
+</svg>
