@@ -1,227 +1,220 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="400">
   <defs>
-    <!-- Background linear gradient -->
+    <!-- Background Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="0%" stop-color="#080c18" />
       <stop offset="50%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#090d16" />
     </linearGradient>
 
-    <!-- Card linear gradient -->
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85" />
-      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85" />
-    </linearGradient>
+    <!-- Ambient Glow Gradients -->
+    <radialGradient id="cyanAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+    </radialGradient>
 
-    <!-- Title vibrant gradient -->
+    <radialGradient id="purpleAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Foreground Title Linear Gradient -->
     <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#60a5fa" />
-      <stop offset="35%" stop-color="#38bdf8" />
-      <stop offset="70%" stop-color="#818cf8" />
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="35%" stop-color="#818cf8" />
+      <stop offset="70%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Pill Tag Border Gradient -->
+    <linearGradient id="tagBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
       <stop offset="100%" stop-color="#c084fc" />
     </linearGradient>
 
-    <!-- Swarm particle gradient -->
-    <radialGradient id="particleGlow1" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="particleGlow2" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="particleGlow3" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#34d399" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#34d399" stop-opacity="0" />
-    </radialGradient>
-
-    <!-- Filter for soft glow -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+    <!-- Soft Glow Filter -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="8" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
+
+    <style>
+      @keyframes dashMove {
+        to {
+          stroke-dashoffset: -1200;
+        }
+      }
+      @keyframes auraPulse {
+        0%, 100% { transform: scale(1); opacity: 0.35; }
+        50% { transform: scale(1.15); opacity: 0.65; }
+      }
+      @keyframes floatDot {
+        0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+        50% { transform: translateY(-12px) translateX(8px); opacity: 0.9; }
+      }
+      @keyframes radarSweep {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes nodePulse {
+        0%, 100% { r: 4px; fill-opacity: 0.5; }
+        50% { r: 7.5px; fill-opacity: 1; filter: drop-shadow(0 0 6px #38bdf8); }
+      }
+      .stream-line {
+        stroke-dasharray: 12, 16;
+        animation: dashMove 32s linear infinite;
+      }
+      .stream-fast {
+        stroke-dasharray: 8, 12;
+        animation: dashMove 20s linear infinite;
+      }
+      .aura-glow {
+        animation: auraPulse 6s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .node-anim {
+        animation: nodePulse 3s ease-in-out infinite;
+      }
+      .particle-1 { animation: floatDot 4s ease-in-out infinite; }
+      .particle-2 { animation: floatDot 6s ease-in-out infinite 1s; }
+      .particle-3 { animation: floatDot 5s ease-in-out infinite 2s; }
+    </style>
   </defs>
 
-  <style>
-    .title-text {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-weight: 800;
-      font-size: 38px;
-      letter-spacing: -0.5px;
-      fill: url(#titleGrad);
-    }
-    .sub-text {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-weight: 400;
-      font-size: 15px;
-      letter-spacing: 0.2px;
-      fill: #94a3b8;
-    }
-    .badge-text {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-weight: 600;
-      font-size: 12px;
-      fill: #e2e8f0;
-    }
-    .card-label {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      fill: #f8fafc;
-    }
-    .card-sub {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-weight: 400;
-      font-size: 11px;
-      fill: #94a3b8;
-    }
+  <!-- Base Canvas -->
+  <rect width="1200" height="400" rx="12" fill="url(#bgGrad)" />
 
-    /* Ambient animated swarm paths */
-    @keyframes dashFlow {
-      0% { stroke-dashoffset: 400; }
-      100% { stroke-dashoffset: 0; }
-    }
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.3; transform: scale(1); }
-      50% { opacity: 0.65; transform: scale(1.08); }
-    }
-    @keyframes floatParticle {
-      0% { transform: translate(0, 0); }
-      50% { transform: translate(15px, -12px); }
-      100% { transform: translate(0, 0); }
-    }
-    @keyframes pulseOrb {
-      0%, 100% { transform: scale(0.95); opacity: 0.4; }
-      50% { transform: scale(1.15); opacity: 0.8; }
-    }
+  <!-- Ambient Animated Light Flares (Background Layer) -->
+  <circle cx="200" cy="100" r="180" fill="url(#cyanAura)" class="aura-glow" />
+  <circle cx="1000" cy="300" r="200" fill="url(#purpleAura)" class="aura-glow" style="animation-delay: -3s;" />
 
-    .flow-line {
-      stroke-dasharray: 8, 8;
-      animation: dashFlow 25s linear infinite;
-    }
-    .flow-line-reverse {
-      stroke-dasharray: 6, 6;
-      animation: dashFlow 18s linear infinite reverse;
-    }
-    .swarm-orb-1 {
-      animation: pulseGlow 6s ease-in-out infinite;
-      transform-origin: 200px 100px;
-    }
-    .swarm-orb-2 {
-      animation: pulseGlow 7s ease-in-out infinite 1.5s;
-      transform-origin: 1000px 260px;
-    }
-    .floating-dot {
-      animation: floatParticle 8s ease-in-out infinite;
-    }
-  </style>
-
-  <!-- Background Base -->
-  <rect width="1200" height="360" fill="url(#bgGrad)" rx="16" />
-
-  <!-- Background Grid Pattern -->
-  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
-    <line x1="0" y1="60" x2="1200" y2="60" />
-    <line x1="0" y1="120" x2="1200" y2="120" />
-    <line x1="0" y1="180" x2="1200" y2="180" />
-    <line x1="0" y1="240" x2="1200" y2="240" />
-    <line x1="0" y1="300" x2="1200" y2="300" />
-    <line x1="150" y1="0" x2="150" y2="360" />
-    <line x1="300" y1="0" x2="300" y2="360" />
-    <line x1="450" y1="0" x2="450" y2="360" />
-    <line x1="600" y1="0" x2="600" y2="360" />
-    <line x1="750" y1="0" x2="750" y2="360" />
-    <line x1="900" y1="0" x2="900" y2="360" />
-    <line x1="1050" y1="0" x2="1050" y2="360" />
+  <!-- Structural Grid Lines (Background Accent) -->
+  <g opacity="0.08" stroke="#60a5fa" stroke-width="1">
+    <line x1="0" y1="70" x2="1200" y2="70" />
+    <line x1="0" y1="140" x2="1200" y2="140" />
+    <line x1="0" y1="210" x2="1200" y2="210" />
+    <line x1="0" y1="280" x2="1200" y2="280" />
+    <line x1="0" y1="350" x2="1200" y2="350" />
+    <line x1="150" y1="0" x2="150" y2="400" />
+    <line x1="300" y1="0" x2="300" y2="400" />
+    <line x1="450" y1="0" x2="450" y2="400" />
+    <line x1="600" y1="0" x2="600" y2="400" />
+    <line x1="750" y1="0" x2="750" y2="400" />
+    <line x1="900" y1="0" x2="900" y2="400" />
+    <line x1="1050" y1="0" x2="1050" y2="400" />
   </g>
 
-  <!-- Animated Background Glow Orbs -->
-  <circle class="swarm-orb-1" cx="200" cy="100" r="140" fill="url(#particleGlow1)" />
-  <circle class="swarm-orb-2" cx="1020" cy="240" r="150" fill="url(#particleGlow2)" />
-  <circle class="swarm-orb-1" cx="620" cy="320" r="100" fill="url(#particleGlow3)" />
-
-  <!-- Dynamic Swarm Workflow Flow Lines (in background layer) -->
-  <g opacity="0.35">
-    <path class="flow-line" d="M 120 70 Q 300 130 600 80 T 1080 120" fill="none" stroke="#38bdf8" stroke-width="2" />
-    <path class="flow-line-reverse" d="M 100 290 Q 400 220 750 280 T 1100 240" fill="none" stroke="#a855f7" stroke-width="2" />
-    <path class="flow-line" d="M 220 340 C 450 180 800 340 1050 90" fill="none" stroke="#34d399" stroke-width="1.5" />
+  <!-- Dynamic Swarm Flow Streams (Background Behind Text/Cards) -->
+  <g fill="none">
+    <path d="M -50,320 C 250,370 420,240 700,310 S 1050,360 1250,300" stroke="#0ea5e9" stroke-width="2.5" opacity="0.55" class="stream-line" />
+    <path d="M -50,90 C 200,40 500,180 800,100 S 1100,50 1250,120" stroke="#8b5cf6" stroke-width="2" opacity="0.45" class="stream-fast" />
+    <path d="M -50,230 C 350,160 650,350 950,220 S 1150,170 1250,240" stroke="#ec4899" stroke-width="1.8" opacity="0.35" class="stream-line" style="animation-delay: -5s;" />
   </g>
 
-  <!-- Ambient Dynamic Floating Particles -->
-  <g class="floating-dot" opacity="0.6">
-    <circle cx="160" cy="140" r="4" fill="#38bdf8" />
-    <circle cx="320" cy="50" r="3" fill="#a855f7" />
-    <circle cx="980" cy="80" r="4" fill="#34d399" />
-    <circle cx="1060" cy="180" r="3" fill="#60a5fa" />
-    <circle cx="850" cy="310" r="4" fill="#f472b6" />
-    <circle cx="260" cy="280" r="3" fill="#38bdf8" />
+  <!-- Animated Floating Data Nodes -->
+  <g>
+    <circle cx="240" cy="325" r="5" fill="#38bdf8" class="node-anim" />
+    <circle cx="510" cy="275" r="5" fill="#818cf8" class="node-anim" style="animation-delay: 1s;" />
+    <circle cx="780" cy="315" r="5" fill="#c084fc" class="node-anim" style="animation-delay: 2s;" />
+    <circle cx="1040" cy="335" r="5" fill="#f472b6" class="node-anim" style="animation-delay: 1.5s;" />
   </g>
 
-  <!-- Foreground Content Container (Ensures 100% Foreground Visibility) -->
-  <!-- Header Pill Badge -->
-  <g transform="translate(420, 36)">
-    <rect width="360" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5" />
-    <circle cx="20" cy="16" r="5" fill="#34d399">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+  <!-- Ambient Floating Particles -->
+  <g class="particle-1">
+    <circle cx="120" cy="180" r="3" fill="#38bdf8" opacity="0.7" />
+    <circle cx="1080" cy="160" r="3" fill="#c084fc" opacity="0.7" />
+  </g>
+  <g class="particle-2">
+    <circle cx="280" cy="70" r="3.5" fill="#34d399" opacity="0.6" />
+    <circle cx="920" cy="80" r="3.5" fill="#38bdf8" opacity="0.6" />
+  </g>
+  <g class="particle-3">
+    <circle cx="460" cy="360" r="3" fill="#f59e0b" opacity="0.6" />
+    <circle cx="720" cy="50" r="3" fill="#ec4899" opacity="0.6" />
+  </g>
+
+  <!-- FOREGROUND LAYER - Guaranteed 100% Visibility of Title, Subtitle, and Pills -->
+
+  <!-- Top Status Badge Pill -->
+  <g transform="translate(600, 48)">
+    <rect x="-190" y="-16" width="380" height="32" rx="16" fill="#131d33" stroke="url(#tagBorder)" stroke-width="1.5" opacity="0.95" />
+    <circle cx="-168" cy="0" r="5" fill="#34d399">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
     </circle>
-    <text x="36" y="21" class="badge-text" fill="#93c5fd">TICKET SWARMING &amp; INTELLIGENT COLLABORATION</text>
+    <text x="-150" y="5" fill="#93c5fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="1.8">
+      INTELLIGENT SWARMING &amp; COLLABORATION
+    </text>
   </g>
 
-  <!-- Main Title -->
-  <text x="600" y="118" text-anchor="middle" class="title-text">
+  <!-- Main Title (Unobscured Foreground) -->
+  <text x="600" y="118" fill="url(#titleGrad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="36" font-weight="900" letter-spacing="-0.5" text-anchor="middle" filter="drop-shadow(0px 3px 14px rgba(0,0,0,0.9))">
     Awesome Team Collaboration &amp; Ticket Swarming
   </text>
 
-  <!-- Subtitle -->
-  <text x="600" y="152" text-anchor="middle" class="sub-text">
-    Curated Hub of SaaS &amp; Open-Source Platforms for Cross-Functional Incident Resolution &amp; Human-AI Swarms
+  <!-- Subtitle (Unobscured Foreground) -->
+  <text x="600" y="156" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="500" letter-spacing="0.2" text-anchor="middle" filter="drop-shadow(0px 2px 8px rgba(0,0,0,0.95))">
+    Curated Hub of SaaS Platforms &amp; Open-Source Tools for Incident Swarms, Skills Routing &amp; Human-AI Workflows
   </text>
 
-  <!-- Interactive / Modern Architecture Feature Cards (Foreground) -->
-  <g transform="translate(100, 195)">
+  <!-- Foreground Architecture Cards (Placed below title & subtitle) -->
+  <g transform="translate(90, 195)">
     <!-- Card 1: Dynamic Incident Swarming -->
     <g transform="translate(0, 0)">
-      <rect width="220" height="95" rx="12" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.6" />
-      <circle cx="35" cy="36" r="16" fill="#0369a1" fill-opacity="0.5" />
-      <text x="35" y="42" text-anchor="middle" font-size="16" fill="#38bdf8">⚡</text>
-      <text x="65" y="34" class="card-label">Dynamic Swarms</text>
-      <text x="65" y="52" class="card-sub">Zero-Tier Resolution</text>
-      <text x="20" y="78" class="card-sub" fill="#64748b">Cross-functional subject routing</text>
+      <rect width="235" height="100" rx="12" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.7" />
+      <circle cx="36" cy="36" r="16" fill="#0369a1" fill-opacity="0.45" />
+      <text x="36" y="42" text-anchor="middle" font-size="16" fill="#38bdf8">⚡</text>
+      <text x="65" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Incident Swarms</text>
+      <text x="65" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#38bdf8">Zero-Tier Resolution</text>
+      <text x="20" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#94a3b8">Bypass slow escalation queues</text>
     </g>
 
     <!-- Card 2: Human-AI Agent Swarms -->
     <g transform="translate(260, 0)">
-      <rect width="220" height="95" rx="12" fill="url(#cardGrad)" stroke="#a855f7" stroke-width="1.2" stroke-opacity="0.6" />
-      <circle cx="35" cy="36" r="16" fill="#6b21a8" fill-opacity="0.5" />
-      <text x="35" y="42" text-anchor="middle" font-size="16" fill="#c084fc">🤖</text>
-      <text x="65" y="34" class="card-label">Human-AI Swarms</text>
-      <text x="65" y="52" class="card-sub">MCP &amp; Agent Parity</text>
-      <text x="20" y="78" class="card-sub" fill="#64748b">Autonomous investigation &amp; fixes</text>
+      <rect width="235" height="100" rx="12" fill="url(#cardGrad)" stroke="#a855f7" stroke-width="1.2" stroke-opacity="0.7" />
+      <circle cx="36" cy="36" r="16" fill="#6b21a8" fill-opacity="0.45" />
+      <text x="36" y="42" text-anchor="middle" font-size="16" fill="#c084fc">🤖</text>
+      <text x="65" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Human-AI Swarms</text>
+      <text x="65" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#c084fc">MCP &amp; Agent Parity</text>
+      <text x="20" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#94a3b8">Automated telemetry &amp; root cause</text>
     </g>
 
     <!-- Card 3: Skills-Based Expert Routing -->
     <g transform="translate(520, 0)">
-      <rect width="220" height="95" rx="12" fill="url(#cardGrad)" stroke="#34d399" stroke-width="1.2" stroke-opacity="0.6" />
-      <circle cx="35" cy="36" r="16" fill="#065f46" fill-opacity="0.5" />
-      <text x="35" y="42" text-anchor="middle" font-size="16" fill="#34d399">🎯</text>
-      <text x="65" y="34" class="card-label">Skills Routing</text>
-      <text x="65" y="52" class="card-sub">Minimum Expert Match</text>
-      <text x="20" y="78" class="card-sub" fill="#64748b">Adaptive card invitations &amp; context</text>
+      <rect width="235" height="100" rx="12" fill="url(#cardGrad)" stroke="#34d399" stroke-width="1.2" stroke-opacity="0.7" />
+      <circle cx="36" cy="36" r="16" fill="#065f46" fill-opacity="0.45" />
+      <text x="36" y="42" text-anchor="middle" font-size="16" fill="#34d399">🎯</text>
+      <text x="65" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Skills Routing</text>
+      <text x="65" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#34d399">Minimum Expert Set</text>
+      <text x="20" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#94a3b8">Summon exact SMEs on demand</text>
     </g>
 
     <!-- Card 4: Open-Source Self-Hosted -->
     <g transform="translate(780, 0)">
-      <rect width="220" height="95" rx="12" fill="url(#cardGrad)" stroke="#f59e0b" stroke-width="1.2" stroke-opacity="0.6" />
-      <circle cx="35" cy="36" r="16" fill="#92400e" fill-opacity="0.5" />
-      <text x="35" y="42" text-anchor="middle" font-size="16" fill="#fbbf24">🔓</text>
-      <text x="65" y="34" class="card-label">Self-Hosted OSS</text>
-      <text x="65" y="52" class="card-sub">Privacy &amp; Full Control</text>
-      <text x="20" y="78" class="card-sub" fill="#64748b">From 60k+ star titans to agile relays</text>
+      <rect width="235" height="100" rx="12" fill="url(#cardGrad)" stroke="#f59e0b" stroke-width="1.2" stroke-opacity="0.7" />
+      <circle cx="36" cy="36" r="16" fill="#92400e" fill-opacity="0.45" />
+      <text x="36" y="42" text-anchor="middle" font-size="16" fill="#fbbf24">🔓</text>
+      <text x="65" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Self-Hosted OSS</text>
+      <text x="65" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#fbbf24">Privacy &amp; Full Control</text>
+      <text x="20" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#94a3b8">Mattermost, Zulip, Vikunja &amp; more</text>
     </g>
   </g>
 
-  <!-- Bottom Accent / Status Bar -->
-  <g transform="translate(0, 355)">
-    <rect width="1200" height="5" fill="url(#titleGrad)" />
+  <!-- Tagline Bar at Bottom (Foreground) -->
+  <g transform="translate(600, 345)">
+    <text x="0" y="0" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500" letter-spacing="0.4" text-anchor="middle">
+      🚀 Zero Tiered Handoffs • ⚡ Integrated War Rooms • 🤝 Intelligent Swarm Coordination
+    </text>
+  </g>
+
+  <!-- Bottom Accent Strip -->
+  <g transform="translate(0, 394)">
+    <rect width="1200" height="6" fill="url(#titleGrad)" />
   </g>
 </svg>
